@@ -118,20 +118,32 @@ namespace Practice.Linq.Forms
 		/// </summary>
 		private void Process()
 		{
-
-			var sum = Converter.Sum(GeneratedValues);
-			var multiply = Converter.Multiply(GeneratedValues);
-
-			_processedItemsListBox.DataSource = Converter
+			var values = Converter
 				.Process(GeneratedValues)
 				.ToList();
+			_processedItemsListBox.DataSource = values;
 
-			MessageBox.Show(
-				$"Сумма: {sum}\n" +
+			if (values.Any())
+			{
+				var sum = Converter.Sum(values);
+				var multiply = Converter.Multiply(values);
+
+				MessageBox.Show(
+					$"Сумма: {sum}\n" +
 					$"Произведение: {multiply}",
-				"Результат",
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Information);
+					"Результат",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Information);
+			}
+			else
+			{
+				MessageBox.Show(
+					"Отфильтрованная коллекция пуста!",
+					"Ошибка",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error);
+			}
+
 		}
 
 		#endregion

@@ -119,7 +119,7 @@
 			this._generateBtn.Name = "_generateBtn";
 			this._generateBtn.Size = new System.Drawing.Size(138, 29);
 			this._generateBtn.TabIndex = 2;
-			this._generateBtn.Text = "Сгенировать";
+			this._generateBtn.Text = "Генерировать";
 			this._generateBtn.UseVisualStyleBackColor = true;
 			// 
 			// _countNumBox
