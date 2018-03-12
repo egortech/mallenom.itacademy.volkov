@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs
+/src/practice.linq.prj/obj
+/src/practice.linq.prj/bin/
+/src/.vs/
